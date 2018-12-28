@@ -1,0 +1,46 @@
+================ BASIC EXPRESS SETUP ================
+1. Add package.json
+  nodejs = is a free and open source cross platform for server-side programming  that allows users to build
+          network applications quickly
+  npm init -y
+
+2. Install main dependencies
+  express      = web framework for Node.js, a web framework that let your application to handle
+                  multiple http requests at a specific url
+  mongoose     = used to connect and interact with MongoDB
+  passport     = is a Node.js middleware used for authentication. By default, it stores the user object in session.
+  passport-jwt = is a middleware, that allows only requests with valid tokens to access some special routes 
+                  needing authentication, eg. /user/profile
+  jsonwebtoken = is an authentication standard that works by assigning and passing around 
+                  an encrypted token in requests that helps to identify the logged in user
+  body-parser  = take data through our request
+  bcryptjs     = is a secured way to store passwords in my database
+  validator    = for validations
+  
+  npm i express mongoose passport passport-jwt jsonwebtoken body-parser bcryptjs validator
+
+3. Install dev dependencies Nodemon
+  nodemon = will watch our application and on any change will update the application
+  npm i --save-dev nodemon
+
+4. Create server.js
+  - test the application:
+
+  node server
+
+5. Use nodemon to run the application
+  - add nodemon in package.json :
+  "server": "nodemon server.js"
+
+  - test application:
+  npm run server
+
+6. Connnect to MongoDB
+  - create a new folder config and file keys.js and put MongoURI
+  - in server.js:
+  mongoose.connect(db, { useNewUrlParser: true })
+
+7. Create Route files
+  - create a folder routes and inside an api folder
+  - create users.js: for authentication(username, email, pass) and profile.js: location, bio, experiences, education, social network links
+  - create post.js: for users to create posts and comments
