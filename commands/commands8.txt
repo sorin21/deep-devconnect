@@ -1,0 +1,20 @@
+================ Redux & Authentication ================
+
+1.  npm i redux react-redux redux-thunk
+  - redux = is the state management system
+  - react-redux = a library that puts toghether react and redux
+  - redux-thunk = a middleware that looks to every action and if is a function, it calls that function
+
+  - add Provider in App.js and createStore and applyMidleware in store.js
+  - in store.js add reducers folder, tool for redux inspector
+
+2. Create reducers folders
+3. Create authReducer.js, errorReducer.js
+4. Create index.js in reducers and add combineRdeducers
+5. Create actions folder
+6. Create authAction
+7. Add in register.js connect, mapDispatchToProps, mapStateToProps, propTypes
+8. Add in mapStateToProps auth and errors
+9. Add withRouter in Register.js and :
+  this.props.onRegisterUser(newUser, this.props.history)
+to have history in authReducer.js

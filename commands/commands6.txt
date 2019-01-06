@@ -1,0 +1,17 @@
+================ Getting Started With React & The Frontend ================
+1. create-react-app client
+2. add "proxy" in package.json
+3. Run the client and backend and install this in backend folder
+  - npm i concurrently
+  - add in package.json this:
+  
+  "client-install": "npm install --prefix client",
+  "dev": "concurrently \"npm run server\" \"npm run client\""
+  - then still in backend to start front and back run:
+  - npm run dev
+
+4. Add Bootstrap css and js links
+5. Add Font Awesome css link
+6. Create folder components, inside create folder layout
+7. Create files Footer.js, Navbar.js, Landing.js
+8  npm i react-router-dom

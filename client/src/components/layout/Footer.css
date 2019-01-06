@@ -1,0 +1,6 @@
+.bottom {
+  clear: both;
+  position: relative;
+  height: 70px;
+  margin-top: -70px;
+}

@@ -1,0 +1,24 @@
+================ User API Routes & JWT Authentication ================
+1. Create a folder models and inside create a User.js file
+2. Create User Schema, in User.js, and we pass an object with all fields
+3. Add body-parser in server.js
+4. Install gravatar
+  https://github.com/emerleite/node-gravatar
+
+  npm install gravatar
+  - require gravatar in users.js routes
+5. in users.js:
+  - add gravatar with the options
+  - create the newUser
+  - generate the salt and then the hash with bcrypt
+  - set the newUser.password to the hash
+
+6. Create in users.js the /login route
+
+7. Add passport.js in config folder
+  https://github.com/themikenicholson/passport-jwt
+
+8. Create a folder called validation and inside files: register.js, login.js, is-empty.js
+  https://github.com/chriso/validator.js/
+  - we are using validator plugin that we installed
+  

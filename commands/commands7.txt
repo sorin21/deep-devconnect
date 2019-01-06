@@ -1,0 +1,28 @@
+================ React Router & Component State ================
+
+1.  npm i react-router-dom
+    Add BrowserRouter in App.js and change Landing form a component to a Route
+2. Create auth folder with Login.js and Register.js
+3. Create routes for Login.js and Register.js in App.js
+4. Register.js and Login.js:
+  - add constructor()
+  - add state()
+  - create onChange and onSubmit methods
+
+5. Install Axios
+  - npm i axios
+  - use axios to post in mlab and to catch errors using state errors
+
+6. Install classnames
+  - npm i classnames
+  - add classnames in Register.js
+
+7. Destruct errors from state in render()
+  - add classnames in each input: is-invalid class we want to have only if we have a value errors.name
+  - is-invalid is a bootstrap class for errors
+  className={classnames('form-control form-control-lg', {
+    'is-invalid': errors.name
+  })}
+  - add the error text under each input
+  {errors.name && (<div className="invalid-feedback">{errors.name}</div>)}
+  - add novalidate in <form> to not use HTML5 validation

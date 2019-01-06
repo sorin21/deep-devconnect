@@ -1,0 +1,5 @@
+================ Profile API Routes ================
+1. Add a Profile.js file in models folder
+2. Create route GET  api/profile for current user
+4. Create route POST  api/profile for creating the user's profile
+5. Crete route GET api/profile/handle/:handle
