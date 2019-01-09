@@ -15,6 +15,25 @@
 6. Create authAction
 7. Add in register.js connect, mapDispatchToProps, mapStateToProps, propTypes
 8. Add in mapStateToProps auth and errors
-9. Add withRouter in Register.js and :
+9. Add withRouter in Register.js and:
   this.props.onRegisterUser(newUser, this.props.history)
 to have history in authReducer.js
+10. Create the loginUser action
+
+11. Install jwt decode to decode token and extract the user from it 
+  - npm i jwt-decode
+  - implement jwt decode in loginUser
+
+12. Create validation folder and add is-empty.js file, same from backend validation folder
+  - add isEmpty function in authReducer.js
+
+13. Add connect, propTypes and errors inside HTML to Login.js
+14. Add classnames to Login.js
+
+15. Add setAuthToken, jwt-decode, SET_CURRENT_USER in App.js 
+  - we use setCurrentUser for login and logout
+16. Create logoutUser action in authActions.js
+
+17. Add connect in Navbar.js 
+18. Create authLink, for authorized user and guestLinks and put a condition to see them
+  - {isAuthenticated ? authLinks : guestLinks}

@@ -18,6 +18,7 @@ class Register extends Component {
     }
   }
 
+  // we mapp back to the state the props
   static getDerivedStateFromProps(nextProps, prevState) {
     // if there is an error
     if (nextProps.errors) {
@@ -25,13 +26,13 @@ class Register extends Component {
       return { errors: nextProps.errors };
     }
     return null;
-  }
+  };
 
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.errors !== this.props.errors) {
       this.setState({ errors: this.props.errors })
     }
-  }
+  };
 
   onChange = (event) => {
     // this event.target.name is name, or email, etc

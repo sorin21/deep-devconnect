@@ -1,20 +1,30 @@
-import { REGISTER_USER } from '../actions/authActions'
-
+import { SET_CURRENT_USER } from '../actions/authActions'
+import isEmpty from '../validation/is-empty';
 
 const initialState = {
   isAuthenticated: false,
-  users: {}
+  user: {}
 };
 
 
 const authReducer = (state = initialState, action) => {
   switch (action.type) {
-    case REGISTER_USER:
+    // case REGISTER_USER:
+    //   return {
+    //     ...state,
+    //     // fill the user with what is in payload
+    //     user: action.payload
+    //   };
+
+    case SET_CURRENT_USER:
       return {
         ...state,
-        // fill the user with what is in payload
-        users: action.payload
+        // check to see if the object is not empty
+        // because the payload is an obj with decoded user
+        isAuthenticated: !isEmpty(action.payload),
+        user: action.payload
       }
+
     default:
       return state;
   }
