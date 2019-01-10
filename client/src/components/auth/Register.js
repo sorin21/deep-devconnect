@@ -22,15 +22,21 @@ class Register extends Component {
   // we mapp back to the state the props
   static getDerivedStateFromProps(nextProps, prevState) {
     // check if user is authenticated
-    if (nextProps.auth.isAuthenticated) {
-      nextProps.history.push('/dashboard');
-    }
+    // if (nextProps.auth.isAuthenticated) {
+    //   nextProps.history.push('/dashboard');
+    // }
     // if there is an error
     if (nextProps.errors) {
       // then add it to errors object
       return { errors: nextProps.errors };
     }
     return null;
+  };
+
+  componentDidMount() {
+    if (this.props.auth.isAuthenticated) {
+      this.props.history.push('/dashboard');
+    }
   };
 
   componentDidUpdate(prevProps, prevState) {
@@ -79,7 +85,7 @@ class Register extends Component {
                     name="name"
                     value={this.state.name}
                     onChange={this.onChange}
-                    error={errors.email} />
+                    error={errors.name} />
                 </div>
                 <div className="form-group">
                   <TextFieldGroup
@@ -88,7 +94,8 @@ class Register extends Component {
                     name="email"
                     value={this.state.email}
                     onChange={this.onChange}
-                    error={errors.email} />
+                    error={errors.email}
+                    info="This website uses Gravatar so if you want a profile image, use a Gravatar email" />
                 </div>
                 <div className="form-group">
                   <TextFieldGroup
@@ -97,7 +104,7 @@ class Register extends Component {
                     name="password"
                     value={this.state.password}
                     onChange={this.onChange}
-                    error={errors.email} />
+                    error={errors.password} />
                 </div>
                 <div className="form-group">
                   <TextFieldGroup
@@ -106,7 +113,7 @@ class Register extends Component {
                     name="password2"
                     value={this.state.password2}
                     onChange={this.onChange}
-                    error={errors.email} />
+                    error={errors.password2} />
                 </div>
                 <input type="submit" className="btn btn-info btn-block mt-4" />
               </form>
