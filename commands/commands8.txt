@@ -37,3 +37,13 @@ to have history in authReducer.js
 17. Add connect in Navbar.js 
 18. Create authLink, for authorized user and guestLinks and put a condition to see them
   - {isAuthenticated ? authLinks : guestLinks}
+
+19. Check if the token is expired to logout the user
+  - decoded.exp < currentTime
+  - if the token is expired redirect to login
+  - window.location.href = "/login";
+
+20. If the user is logged in we don't want to see login, register, or landing so we add in getDerivedStateFromProps method this:
+  -  if (nextProps.auth.isAuthenticated) {
+      nextProps.history.push('/dashboard');
+    }

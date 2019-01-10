@@ -8,7 +8,7 @@ import Landing from './components/layout/Landing';
 import Footer from './components/layout/Footer';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
-import { setCurrentUser } from './actions/authActions';
+import { setCurrentUser, logoutUser } from './actions/authActions';
 import setAuthToken from './utils/setAuthToken';
 import store from './store';
 import './App.css';
@@ -18,10 +18,24 @@ const { jwtToken } = localStorage;
 if (jwtToken) {
   // Set auth token header off
   setAuthToken(jwtToken);
+
   // Decode token and set user info and expiration
   const decoded = jwt_decode(jwtToken);
+
   // Set user and isAuthenticated
   store.dispatch(setCurrentUser(decoded));
+
+  // Check for expired token (seconds)
+  // we need to have to currentTime in seconds to compare so 1000ms = 1s
+  // because in backend jwt is set to 3600 seconds
+  const currentTime = Date.now()/1000;
+  if(decoded.exp < currentTime) {
+    // Logout user
+    store.dispatch(logoutUser)
+    // Clear the current Profile
+    // Redirect to login
+    window.location.href = "/login";
+  }
 }
 
 class App extends Component {

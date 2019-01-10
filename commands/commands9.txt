@@ -1,0 +1,4 @@
+================ Dashboard & Profile State - Part 1 ================
+
+1. Create folder common and add TextFieldGroup.js file 
+2. Add TextFieldGroup to Login.js and Register.js
