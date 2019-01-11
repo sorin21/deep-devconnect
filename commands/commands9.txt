@@ -2,3 +2,11 @@
 
 1. Create folder common and add TextFieldGroup.js file 
 2. Add TextFieldGroup to Login.js and Register.js
+
+3. Create profileReducer.js with initialState
+4. Create profileActions.js
+
+5. Create dasboard folder in components
+6. Add in Navbar.js in logout clearCurrentProfile.js action to set profile to null
+7. Create in App.js a new route for Dashboard /dashboard and also clear the current profile:
+  - store.dispatch(clearCurrentProfile())

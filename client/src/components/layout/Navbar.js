@@ -4,10 +4,12 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import { logoutUser } from '../../actions/authActions';
+import { clearCurrentProfile } from '../../actions/profileActions';
 
 class Navbar extends Component {
   onLogoutClick = (event) => {
     event.preventDefault();
+    this.props.onClearCurrentProfile();
     this.props.onLogoutUser();
   };
 
@@ -65,7 +67,8 @@ class Navbar extends Component {
 Navbar.propTypes = {
   auth: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired,
-  onLogoutUser: PropTypes.func.isRequired
+  onLogoutUser: PropTypes.func.isRequired,
+  onClearCurrentProfile: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => {
@@ -78,7 +81,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onLogoutUser: () => dispatch(logoutUser())
+    onLogoutUser: () => dispatch(logoutUser()),
+    onClearCurrentProfile: () => dispatch(clearCurrentProfile())
   }
 };
 
