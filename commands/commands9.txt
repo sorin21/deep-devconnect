@@ -10,3 +10,12 @@
 6. Add in Navbar.js in logout clearCurrentProfile.js action to set profile to null
 7. Create in App.js a new route for Dashboard /dashboard and also clear the current profile:
   - store.dispatch(clearCurrentProfile())
+
+8. In Dashboard.js add state.profile and create if else to show dashboardContent
+
+9. In common folder add Spinner.gif and create Spinner.js file
+
+10. In Dashboard.js add the Spinner and create a button for users that don't have a profile
+
+11. Create PrivateRoute.js in common to add private routes and create with Route a that private route
+12. Add this PrivateRoute in App.js for Dashboard and wrapped with Switch to not have problems with redirect

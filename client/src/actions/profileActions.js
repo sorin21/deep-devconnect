@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { GET_ERRORS } from './types';
+// import { GET_ERRORS } from './types';
 
 export const GET_PROFILES = 'GET_PROFILES';
 export const PROFILE_NOT_FOUND = 'PROFILE_NOT_FOUND';
