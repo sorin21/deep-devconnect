@@ -1,0 +1,10 @@
+================ Dashboard & Profile State - Part 2 ================
+
+1. Create DasboardActions.js in DASHBOARD  folder
+2. Add Link in Dasboard to username
+  - <Link to={`/profile/${profile.handle}`}>{user.name}</Link> 
+3. Add DasboardActions.js in Dasboard.js
+4. Put the html from dashboard.html and create function deleteMyAccount()
+5. Add in profileActions.js the action for deleteAccount()
+
+5. Create folder edit-profile and EditProfile file. This will be the same like create-profile.

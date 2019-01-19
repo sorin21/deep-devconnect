@@ -1,7 +1,7 @@
 import axios from 'axios';
 import jwt_decode from 'jwt-decode';
 
-import { GET_ERRORS } from './types';
+import { GET_ERRORS, SET_CURRENT_USER } from './types';
 import setAuthToken from '../utils/setAuthToken';
 
 
@@ -46,7 +46,6 @@ export const loginUser = (userData) => {
 };
 
 // Set logged user
-export const SET_CURRENT_USER = 'SET_CURRENT_USER';
 export const setCurrentUser = (decoded) => {
   return {
     type: SET_CURRENT_USER,

@@ -1,5 +1,6 @@
 import axios from 'axios';
-// import { GET_ERRORS } from './types';
+import { GET_ERRORS } from './types';
+import { logoutUser } from './authActions'
 
 export const GET_PROFILES = 'GET_PROFILES';
 export const PROFILE_NOT_FOUND = 'PROFILE_NOT_FOUND';
@@ -23,6 +24,39 @@ export const getProfile = () => {
         }))
   };
 };
+
+export const CREATE_PROFILE = 'CREATE_PROFILE';
+export const createProfile = (profileData, history) => {
+  return (dispatch) => {
+    axios.post('/api/profile', profileData)
+      .then((result) => {
+        history.push('/dashboard');
+      })
+      .catch((error) => {
+        dispatch({
+          type: GET_ERRORS,
+          payload: error.response.data
+        })
+      })
+  }
+}
+
+export const deleteAccount = () => {
+  return (dispatch) => {
+    if (window.confirm('Are you sure? This can NOT be undone!')) {
+      axios.delete('/api/profile')
+        .then((response) => {
+          dispatch(logoutUser());
+        })
+        .catch((error) => {
+          dispatch({
+            type: GET_ERRORS,
+            payload: error.response.data
+          })
+        })
+    }
+  }
+}
 
 export const PROFILE_LOADING = 'PROFILE_LOADING';
 export const profileLoading = () => {

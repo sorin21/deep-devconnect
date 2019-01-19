@@ -19,3 +19,9 @@
 
 11. Create PrivateRoute.js in common to add private routes and create with Route a that private route
 12. Add this PrivateRoute in App.js for Dashboard and wrapped with Switch to not have problems with redirect
+
+13. Create CREATE-PROFILE folder and inside CreateProfile.js file
+14. In CreateProfile.js file add state = {}
+15. Create in COMMON the files TextAreaFieldGroup.js, SelectListGroup.js
+16. Implement in CreateProfile.js all the fields from above in a form
+17. Add in profileActions.js CREATE_PROFILE action 

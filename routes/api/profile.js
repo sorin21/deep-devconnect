@@ -315,6 +315,20 @@ router.delete('/education/:edu_id', passport.authenticate('jwt', { session: fals
     .catch(error => response.status(404).json(error));
 });
 
+// @route   DELETE api/profile
+// @desc    Delete user and profile
+// @access  Private
+router.delete(
+  '/',
+  passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    Profile.findOneAndRemove({ user: req.user.id }).then(() => {
+      User.findOneAndRemove({ _id: req.user.id }).then(() =>
+        res.json({ success: true })
+      );
+    });
+  }
+);
 
 // export the router so serve.js file to pick it up
 module.exports = router;
